@@ -11,11 +11,13 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+// import NoteState from '../context/notes/NoteState';
 
 
 function App() {
   return (
     <>
+    {/* <NoteState> */}
       <Router>
         <NavBar />
         <Routes>
@@ -26,6 +28,7 @@ function App() {
           <Route path="/Signup" element={<Signup />} />
         </Routes>
       </Router>
+      {/* </NoteState> */}
     </>
   );
 }

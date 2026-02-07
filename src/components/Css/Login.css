@@ -51,11 +51,21 @@ body {
     background: rgb(218, 164, 234);
 }
 
-.Login-right button {
+.LogInBtn{
     padding: 10px;
     border-radius: 6px;
     border: none;
     cursor: pointer;
     background: rgb(91, 3, 117);
     color: aliceblue;
+}
+
+.toggle{
+    background-color: red;
+}
+.Login-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
 }
