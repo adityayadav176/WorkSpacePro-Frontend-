@@ -1,12 +1,30 @@
 import React from 'react'
 import NavBar from '../components/NavBar';
+import NoteItem from '../components/noteItem';
+import "./Css/notes.css";
+
 
 function Notes() {
+
   return (
-    <div>
-      <NavBar/>
-      <h1>this is notes</h1>
-    </div>
+    <>
+
+      <NavBar />
+      <div className="notes-nav">
+        <h2>Notes & Documentation</h2>
+        <p>Keep track of important information</p>
+      </div>
+      <div className="btn">
+        <button className='add-note'>
+          <i class="fa-solid fa-plus">
+          </i>New Note</button>
+      </div>
+      <div className="notes-container">
+      <NoteItem />
+      <NoteItem />
+      <NoteItem />
+      </div>
+    </>
   )
 }
 
