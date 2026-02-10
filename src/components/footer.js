@@ -23,22 +23,22 @@ function Footer() {
       <div class="footer-links">
         <h4>Product</h4>
         <ul>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Integrations</a></li>
-          <li><a href="#">Pricing</a></li>
-          <li><a href="#">Changelog</a></li>
-          <li><a href="#">Docs</a></li>
+          <li><a href="/">Features</a></li>
+          <li><a href="/">Integrations</a></li>
+          <li><a href="/">Pricing</a></li>
+          <li><a href="/">Changelog</a></li>
+          <li><a href="/">Docs</a></li>
         </ul>
       </div>
 
       <div class="footer-links">
         <h4>Company</h4>
         <ul>
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Careers</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="#">Contact</a></li>
-          <li><a href="#">Partners</a></li>
+          <li><a href="/">About Us</a></li>
+          <li><a href="/">Careers</a></li>
+          <li><a href="/">Blog</a></li>
+          <li><a href="/">Contact</a></li>
+          <li><a href="/">Partners</a></li>
         </ul>
       </div>
 
@@ -56,21 +56,21 @@ function Footer() {
 
         <small>
           By subscribing, you agree to our
-          <a href="#">Privacy Policy</a>.
+          <a href="/">Privacy Policy</a>.
         </small>
       </div>
 
     </div>
 
     <div class="footer-bottom">
-      <p>© 2026 Figma Make Inc. All rights reserved.</p>
+      <p>© 2026 WorkSpace Pro Inc. All rights reserved.</p>
 
       <div class="social-icons">
-        <a href="#">🐦</a>
-        <a href="#">🐙</a>
-        <a href="#">📷</a>
-        <a href="#">💼</a>
-        <a href="#">📘</a>
+        <a href="/">🐦</a>
+        <a href="/">🐙</a>
+        <a href="/">📷</a>
+        <a href="/">💼</a>
+        <a href="/">📘</a>
       </div>
     </div>
   </footer>
