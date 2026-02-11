@@ -4,6 +4,7 @@ import NoteItem from '../components/noteItem';
 import "./Css/notes.css";
 import Footer from './footer';
 import noteContext from "../context/notes/noteContext"
+import AddNote from './AddNote';
 
 
 function Notes() {
@@ -32,6 +33,7 @@ function Notes() {
         return  <NoteItem key={note._id} note={note}/>
       })}
       </div>
+      <AddNote/>
        <Footer/>
     </>
   )

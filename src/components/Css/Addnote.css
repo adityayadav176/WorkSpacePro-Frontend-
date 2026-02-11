@@ -1,0 +1,88 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalBox {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    margin: 1.5rem;
+}
+
+.modalBox h2 {
+    margin-bottom: 2rem;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    box-sizing: border-box;
+    /* VERY IMPORTANT */
+    outline: none;
+    margin: 15px 0;
+    transition: 0.2s;
+    /* margin-right: 4rem; */
+}
+
+input:focus {
+    border: 1.5px solid #9a0fdf;
+    outline: 1.5px solid #af08cd;
+}
+
+select:focus {
+    border: 1.5px solid #9a0fdf;
+    outline: 1.5px solid #af08cd;
+}
+
+.AddnoteBtn {
+    padding: 0.7rem 2rem;
+    border-radius: 0.8rem;
+    background-color: blueviolet;
+    color: aliceblue;
+    display: flex;
+    border: none;
+    font-size: 1rem;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+.AddnoteBtn:hover {
+    background-color: rgb(122, 9, 227);
+}
+
+.CancelnoteBtn:hover {
+    background-color: rgb(185, 182, 189);
+}
+
+.CancelnoteBtn {
+    padding: 0.7rem 2rem;
+    border-radius: 0.8rem;
+    background-color: rgb(220, 216, 224);
+    color: black;
+    display: flex;
+    border: none;
+    font-size: 1rem;
+    gap: 10px;
+    justify-content: space-evenly;
+}
+
+span {
+    font-weight: 700;
+}
+
+.addNoteBtnsSection {
+    display: flex;
+    gap: 1rem;
+}
