@@ -18,7 +18,8 @@ function Notes() {
       </div>
       <div className="btn">
         <button className='add-note'>
-          <i class="fa-solid fa-plus">
+          <i className=
+"fa-solid fa-plus">
           </i>New Note</button>
       </div>
       </div>

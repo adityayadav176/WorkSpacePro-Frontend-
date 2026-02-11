@@ -15,8 +15,10 @@ function NoteItem() {
                         27/12/2024
                     </div>
                     <div className="Note-btn">
-                            <i class="fa-regular fa-pen-to-square"></i>
-                            <i class="fa-regular fa-trash-can note-trash-btn"></i>
+                            <i className=
+"fa-regular fa-pen-to-square"></i>
+                            <i className=
+"fa-regular fa-trash-can note-trash-btn"></i>
                     </div>
                 </div>
             </div>

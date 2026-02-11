@@ -4,23 +4,29 @@ import "./Css/footer.css"
 function Footer() {
   return (
     <div>
-  <footer class="footer">
-    <div class="footer-container">
+  <footer className=
+"footer">
+    <div className=
+"footer-container">
 
-      <div class="footer-brand">
-        <h2 class="logo">WorkSpace Pro</h2>
+      <div className=
+"footer-brand">
+        <h2 className=
+"logo">WorkSpace Pro</h2>
         <p>
           This Notes & Task App For You, you Can Explore The app Right Now I Hope This App Help You Thanks For Visit WorkSpace Pro! 
         </p>
 
-        <ul class="contact">
+        <ul className=
+"contact">
           <li>📍 123 Town Agra Sector 12</li>
           <li>📞 +91 9639761042</li>
           <li>✉️ support@WorkSpace.com</li>
         </ul>
       </div>
 
-      <div class="footer-links">
+      <div className=
+"footer-links">
         <h4>Product</h4>
         <ul>
           <li><a href="/">Features</a></li>
@@ -31,7 +37,8 @@ function Footer() {
         </ul>
       </div>
 
-      <div class="footer-links">
+      <div className=
+"footer-links">
         <h4>Company</h4>
         <ul>
           <li><a href="/">About Us</a></li>
@@ -42,14 +49,16 @@ function Footer() {
         </ul>
       </div>
 
-      <div class="footer-newsletter">
+      <div className=
+"footer-newsletter">
         <h4>Stay up to date</h4>
         <p>
           Subscribe to our newsletter for the latest updates,
           articles, and resources.
         </p>
 
-        <form class="newsletter-form">
+        <form className=
+"newsletter-form">
           <input type="email" placeholder="Enter your email" />
           <button type="submit">→</button>
         </form>
@@ -62,10 +71,12 @@ function Footer() {
 
     </div>
 
-    <div class="footer-bottom">
+    <div className=
+"footer-bottom">
       <p>© 2026 WorkSpace Pro Inc. All rights reserved.</p>
 
-      <div class="social-icons">
+      <div className=
+"social-icons">
         <a href="/">🐦</a>
         <a href="/">🐙</a>
         <a href="/">📷</a>

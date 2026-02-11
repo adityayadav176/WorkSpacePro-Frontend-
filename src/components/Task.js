@@ -14,7 +14,8 @@ function Task() {
       </div>
       <div className="btn">
         <button className='add-Task'>
-          <i class="fa-solid fa-plus">
+          <i className=
+"fa-solid fa-plus">
           </i>New Task</button>
       </div>
       </div>

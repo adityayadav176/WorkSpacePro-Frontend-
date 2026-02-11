@@ -18,6 +18,12 @@ function NavBar() {
         <li><NavLink to="/Dashboard"><i className="fa-regular fa-user"></i><span>Dashboard</span></NavLink></li>
         <li><NavLink to="/Task"><i className="fa-regular fa-square-check"></i><span>Tasks</span></NavLink></li>
         <li><NavLink to="/Notes"><i className="fa-regular fa-file-lines"></i><span>Notes</span></NavLink></li>
+        <div className="user-section">
+          <p className='userName'>Aditya Yadav</p>
+          <p className='userEmail'>ay6598aditya@gmail.com</p>
+        </div>
+        <li><NavLink to="/"><i className=
+"fa-solid fa-arrow-right-from-bracket"></i><span className='logout'>Logout</span></NavLink></li>
       </ul>
      </div>
      </nav>

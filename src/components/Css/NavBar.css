@@ -57,3 +57,24 @@ nav{
   background-color: #2563eb;  /* blue */
   color: white;
 }
+
+.fa-arrow-right-from-bracket, .logout{
+    color: rgb(176, 0, 0);
+}
+
+.user-data {
+    font-size: 1rem;
+}
+
+.userEmail{
+    font-size: 0.8rem;
+    color: grey;
+}
+
+.user-section{
+  border-left: 1px solid #dcdcdc;   /* vertical line */
+  padding-left: 20px;               /* space after line */
+  margin-left: 20px;                /* space before line */
+  height: 40px;                     /* adjust */
+  align-items: center;
+}
