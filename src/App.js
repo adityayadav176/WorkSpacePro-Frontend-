@@ -14,7 +14,7 @@ import {
 import NoteState from './context/notes/NoteState';
 
 
-function App() {
+function App(props) {
   return (
     <>
       <NoteState>

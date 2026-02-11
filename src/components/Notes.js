@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import NavBar from '../components/NavBar';
 import NoteItem from '../components/noteItem';
 import "./Css/notes.css";
 import Footer from './footer';
+import noteContext from "../context/notes/noteContext"
 
 
 function Notes() {
+ const context = useContext(noteContext);
+  const {notes, setNotes} = context; 
 
   return (
     <>
@@ -31,17 +34,11 @@ function Notes() {
       <NoteItem />
       <NoteItem />
       <NoteItem />
-      <NoteItem />
-      <NoteItem />
-      <NoteItem />
-      <NoteItem />
-      <NoteItem />
-      <NoteItem />
-      <NoteItem />
-      <NoteItem />
-      <NoteItem />
       </div>
       <Footer/>
+      {notes.map((note)=>{
+        return note.title
+      })}
     </>
   )
 }
