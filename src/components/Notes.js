@@ -32,7 +32,7 @@ function Notes() {
      {showForm && <AddNote closeForm={() => setShowForm(false)} />}
       <div className="notes-container">
         {notes.map((note)=>{
-        return  <NoteItem key={note._id} note={note}/>
+        return <NoteItem key={note._id} note={note}/>
       })}
       </div>
      

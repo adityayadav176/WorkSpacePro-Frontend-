@@ -38,8 +38,11 @@ const addNote = (title, description, tag) =>{
   setNotes(notes.concat(note))
 }
 // delete note
-const deleteNote = () =>{
-  
+const deleteNote = (id) =>{
+   // TODO API CALL 
+  console.log("deleting the note", id)
+   const newNotes = notes.filter((note)=>{ return note._id!==id})
+  setNotes(newNotes)
 }
 // edit note
 const editNote = () =>{

@@ -1,8 +1,11 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import "./Css/noteItem.css";
+import noteContext from "../context/notes/noteContext"
 
 function NoteItem(props) {
-    const {note} = props;
+    const context = useContext(noteContext);
+    const { deleteNote } = context;
+    const { note } = props;
     return (
         <>
             <div className="Notes-items">
@@ -13,13 +16,11 @@ function NoteItem(props) {
                 <p className='description'>{note.description}</p>
                 <div className="Note-lower-data">
                     <div className="note-date">
-                       {note.date}
+                        {note.date}
                     </div>
                     <div className="Note-btn">
-                            <i className=
-"fa-regular fa-pen-to-square"></i>
-                            <i className=
-"fa-regular fa-trash-can note-trash-btn"></i>
+                        <i className="fa-regular fa-pen-to-square"></i>
+                        <i className="fa-regular fa-trash-can note-trash-btn" onClick={()=>{deleteNote(note._id)}}></i>
                     </div>
                 </div>
             </div>
