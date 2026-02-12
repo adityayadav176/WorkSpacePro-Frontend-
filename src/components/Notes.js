@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import NavBar from '../components/NavBar';
 import NoteItem from '../components/noteItem';
 import "./Css/notes.css";
@@ -9,7 +9,11 @@ import AddNote from './AddNote';
 
 function Notes() {
  const context = useContext(noteContext);
-  const {notes} = context; 
+  const {notes, getNotes} = context; 
+  useEffect(() => {
+   getNotes();
+  }, [])
+  
   const [showForm, setShowForm] = useState(false);
 
   return (
