@@ -5,13 +5,15 @@ import "./Css/notes.css";
 import Footer from './footer';
 import noteContext from "../context/notes/noteContext"
 import AddNote from './AddNote';
+import EditingNote from './EditingNote';
 
 
 function Notes() {
  const context = useContext(noteContext);
-  const {notes, getNotes} = context; 
+  const {notes, getNotes ,updateNote} = context; 
   useEffect(() => {
    getNotes();
+   // eslint-disable-next-line
   }, [])
   
   const [showForm, setShowForm] = useState(false);
@@ -33,11 +35,13 @@ function Notes() {
           
       </div>
       </div>
-     {showForm && <AddNote closeForm={() => setShowForm(false)} />}
+     {showForm ? <AddNote closeForm={() => setShowForm(false)} /> : updateNote && <EditingNote/>}
+      {}
       <div className="notes-container">
         {notes.map((note)=>{
         return <NoteItem key={note._id} note={note}/>
       })}
+        
       </div>
      
        <Footer/>

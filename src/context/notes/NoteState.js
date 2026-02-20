@@ -66,6 +66,7 @@ const NoteState = (props) => {
       body: JSON.stringify({ title, description, tag })
     });
     const json = response.json();
+    console.log(json)
 
     //LOGIC TO EDIT IN CLIENT
     for (let index = 0; index < notes.length; index++) {
@@ -80,9 +81,10 @@ const NoteState = (props) => {
 
 
   const [notes, setNotes] = useState(notesInitial)
+  const [updateNote, setUpdateNote] = useState(false)
   return (
 
-    <noteContext.Provider value={{ notes, setNotes, addNote, deleteNote, editNote, getNotes }}>
+    <noteContext.Provider value={{ notes, setNotes, addNote, deleteNote, editNote, getNotes, setUpdateNote, updateNote }}>
       {props.children}
     </noteContext.Provider>
   );
