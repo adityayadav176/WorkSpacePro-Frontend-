@@ -13,6 +13,8 @@ function AddNote(props) {
             return;
         }
         addNote(note.title, shortText(note.description, 80), note.tag);
+        setNote({ title: "", description: "", tag: "general" });
+        props.closeForm();
     }
 
     const onchange = (e) => {

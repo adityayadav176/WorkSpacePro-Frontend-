@@ -1,19 +1,73 @@
-import React, {useContext} from 'react'
-import "./Css/noteEditing.css"
-import noteContext from '../context/notes/noteContext'
+import React, { useContext, useState, useEffect } from 'react';
+import "./Css/noteEditing.css";
+import noteContext from '../context/notes/noteContext';
 
-function EditingNote(props) {
+function EditingNote() {
+
   const context = useContext(noteContext);
-  const {setUpdateNote } = context;
+  const { setUpdateNote, currentNote, editNote } = context;
+
+  const [note, setNote] = useState({
+    etitle: "",
+    edescription: "",
+    etag: "general"
+  });
+
+  // Load selected note into form
+  useEffect(() => {
+    if (currentNote) {
+      setNote({
+        etitle: currentNote.title,
+        edescription: currentNote.description,
+        etag: currentNote.tag
+      });
+    }
+  }, [currentNote]);
+
+  // Handle input change
+  const handleChange = (e) => {
+    setNote({
+      ...note,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  // Update note
+  const handleUpdate = () => {
+    if (!currentNote) return;
+
+    editNote(
+      currentNote._id,
+      note.etitle,
+      note.edescription,
+      note.etag
+    );
+
+    setUpdateNote(false);
+  };
+
   return (
     <>
       <div className="modalOverlayUpdate">
         <div className="modalBoxUpdate">
           <h2>Update The Existing Note</h2>
 
-          <input type="text" placeholder='Enter note title...' minLength={3}  required  name='etitle' />
+          <input
+            type="text"
+            placeholder="Enter note title..."
+            minLength={3}
+            required
+            name="etitle"
+            value={note.etitle}
+            onChange={handleChange}
+          />
 
-          <select className="modalInputUpdate" name='etag'>
+          <select
+            className="modalInputUpdate"
+            name="etag"
+            value={note.etag}
+            onChange={handleChange}
+          >
             <option value="general">General</option>
             <option value="work">Work</option>
             <option value="personal">Personal</option>
@@ -24,19 +78,31 @@ function EditingNote(props) {
           <textarea
             placeholder="Write description..."
             className="modalTextareaUpdate"
-            name='edescription'
+            name="edescription"
+            value={note.edescription}
+            onChange={handleChange}
           />
 
           <div className="modalButtonsUpdate">
-            <button className="saveBtnUpdate">Update Note</button>
-            <button className="cancelBtnUpdate" onClick={()=>{setUpdateNote(false)}}>
+            <button
+              className="saveBtnUpdate"
+              onClick={handleUpdate}
+              disabled={note.etitle.length < 3}
+            >
+              Update Note
+            </button>
+
+            <button
+              className="cancelBtnUpdate"
+              onClick={() => setUpdateNote(false)}
+            >
               Cancel
             </button>
           </div>
         </div>
       </div>
     </>
-  )
+  );
 }
 
-export default EditingNote
+export default EditingNote;
