@@ -12,7 +12,6 @@ function Login() {
   });
 
   const [isEmail, setIsEmail] = useState(false)
-  console.log(credentials.email)
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -28,16 +27,11 @@ function Login() {
       });
 
       const json = await response.json();
-      console.log(json);
      
 
       if (response.ok) {
-        // optional: save token
       localStorage.setItem("token", json.authtoken);
-
         alert("Login Successful");
-
-        // redirect to Home
         navigate("/Dashboard");
       }
     else {

@@ -12,20 +12,12 @@ function AddNote(props) {
             alert("Fill title and description");
             return;
         }
-        addNote(shortText(note.title, 20), shortText(note.description, 40), note.tag);
-        setNote({ title: "", description: "", tag: "general" });
+        addNote(note.title, note.description, note.tag);
         props.closeForm();
     }
 
     const onchange = (e) => {
         setNote({ ...note, [e.target.name]: e.target.value })
-    }
-
-    const shortText = (text, maxLength) => {
-        if (text.length > maxLength) {
-            return text.substring(0, maxLength) + "...";
-        }
-        return text;
     }
 
     return (

@@ -82,13 +82,20 @@ const NoteState = (props) => {
   setNotes(newNotes);
 };
 
+ const shortText = (text, maxLength) => {
+        if (text.length > maxLength) {
+            return text.substring(0, maxLength) + "...";
+        }
+        return text;
+    }
+
 
   const [notes, setNotes] = useState(notesInitial)
   const [updateNote, setUpdateNote] = useState(false)
   const [currentNote, setCurrentNote] = useState(null);
   return (
 
-    <noteContext.Provider value={{ notes, setNotes, addNote, deleteNote, editNote, getNotes, setUpdateNote, updateNote, setCurrentNote, currentNote }}>
+    <noteContext.Provider value={{ notes, setNotes, addNote, deleteNote, editNote, getNotes, setUpdateNote, updateNote, setCurrentNote, currentNote, shortText }}>
       {props.children}
     </noteContext.Provider>
   );

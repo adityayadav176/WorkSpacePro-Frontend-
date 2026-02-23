@@ -4,16 +4,16 @@ import noteContext from "../context/notes/noteContext"
 
 function NoteItem(props) {
     const context = useContext(noteContext);
-    const { deleteNote, setUpdateNote, setCurrentNote } = context;
+    const { deleteNote, setUpdateNote, setCurrentNote, shortText } = context;
     const { note } = props;
     return (
         <>
             <div className="Notes-items">
                 <div className="Note-title">
-                    <h2>{note.title}</h2>
+                    <h2>{shortText(note.title, 15)}</h2>
                     <p className='tag'>{note.tag}</p>
                 </div>
-                <p className='description'>{note.description}</p>
+                <p className='description'>{shortText(note.description, 25)}</p>
                 <div className="Note-lower-data">
                     <div className="note-date">
                         {new Date(note.date).toDateString()}
