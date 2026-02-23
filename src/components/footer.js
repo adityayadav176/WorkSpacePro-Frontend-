@@ -19,9 +19,7 @@ function Footer() {
 
         <ul className=
 "contact">
-          <li>📍 123 Town Agra Sector 12</li>
-          <li>📞 +91 9639761042</li>
-          <li>✉️ support@WorkSpace.com</li>
+         
         </ul>
       </div>
 
