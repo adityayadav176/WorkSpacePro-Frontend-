@@ -11,12 +11,12 @@ function NoteItem(props) {
             <div className="Notes-items">
                 <div className="Note-title">
                     <h2>{shortText(note.title, 15)}</h2>
-                    <p className='tag'>{note.tag}</p>
+                    <p className={` note-tag ${note.tag}`}>{note.tag}</p>
                 </div>
                 <p className='description'>{shortText(note.description, 25)}</p>
                 <div className="Note-lower-data">
                     <div className="note-date">
-                        {new Date(note.date).toDateString()}
+                        {new Date(note.date).toLocaleDateString()}
                     </div>
                     <div className="Note-btn">
                         <i className="fa-regular fa-pen-to-square" onClick={() => {setUpdateNote(true); setCurrentNote(note);}}></i>

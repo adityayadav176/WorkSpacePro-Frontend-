@@ -29,12 +29,12 @@ function TaskItem(props) {
            <div className="process">
             <i className=
 "fa-solid fa-check"></i>
-            {task.Status}
+            {task.status}
            </div>
            <div className="task-date">
             <i className=
 "fa-regular fa-clock"></i>
-            {new Date (task.date).toDateString()}
+            {new Date (task.date).toLocaleDateString()}
            </div>
         </div>
       </div> 

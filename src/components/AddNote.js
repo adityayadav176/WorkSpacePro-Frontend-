@@ -32,7 +32,7 @@ function AddNote(props) {
                     <div className="categoryInput" >
                         <span>Category</span>
 
-                        <select onChange={onchange} name='tag'>
+                        <select onChange={onchange} name='tag' value={note.tag}>
                             <option value="general">General</option>
                             <option value="work">Work</option>
                             <option value="personal">Personal</option>

@@ -15,10 +15,9 @@ const TaskState = (props) => {
                 'auth-token': localStorage.getItem('token')
             }
         });
-
+        
         const json = await response.json()
         setTask(json);
-
     }
 
     // deleteTask
@@ -33,23 +32,21 @@ const TaskState = (props) => {
         const json = await response.json()
         const newTask = task.filter((task)=>{ return task._id !== id})
         setTask(newTask);
-        console.log(json)
     }
+    // add task
+    const addTask = async (title, description, status, priority) => {
+    const response = await fetch(`${Host}/api/task/addTask`, {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json',
+            'auth-token': localStorage.getItem('token')
+        },
+        body: JSON.stringify({ title, description, priority, status })
+    });
 
-    const addTask = async(title, description, Status, priority) => {
-        const response = await fetch(`${Host}/api/task/AddTask`, {
-            method: "POST",
-            headers: {
-                 'Content-Type': 'application/json',
-                'auth-token': localStorage.getItem('token')
-            },
-            body: JSON.stringify({title, description, priority, Status})
-        });
-        const json = response.json()
-        console.log(json);
-        setTask(task.concat(json));
-    }
-
+    const json = await response.json();
+    setTask((prev) => [...prev, json.savedTask]);
+};
 
     return (
         <taskContext.Provider value={{ task, getTask, setTask, deleteTask, addTask }}>
