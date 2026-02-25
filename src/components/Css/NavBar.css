@@ -1,47 +1,47 @@
-nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 12vh;
-    width: 100%;
-    background-color: #fff;
-    /* position: fixed; */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 12vh;
+  width: 100%;
+  background-color: #fff;
+  /* position: fixed; */
 }
 
-.left{
-    display: flex;
+.left {
+  display: flex;
 }
 
-.left i{
-    font-size: 3rem;
-    color: blueviolet;
+.left i {
+  font-size: 3rem;
+  color: blueviolet;
 }
 
-.left h4{
-    margin-left: 2px;
-    font-weight: 100;
-    color: grey;
+.left h4 {
+  margin-left: 2px;
+  font-weight: 100;
+  color: grey;
 }
 
 
-.right ul{
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-    margin-right: 20px;
-    list-style: none;
+.right ul {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-right: 20px;
+  list-style: none;
 }
 
 .right ul {
-    cursor: pointer;
-    list-style: none;
-    font-size: 1.2rem;
-    border-radius: 1rem;
-    align-items: center;
+  cursor: pointer;
+  list-style: none;
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  align-items: center;
 }
 
-.LogoutBtn{
-   text-decoration: none;
+.LogoutBtn {
+  text-decoration: none;
   color: black;
   padding: 8px 12px;
   border-radius: 10px;
@@ -66,29 +66,35 @@ nav{
 
 /* ACTIVE (Clicked Page) */
 .right ul li a.active {
-  background-color: #2563eb;  /* blue */
+  background-color: #2563eb;
+  /* blue */
   color: white;
 }
 
 
-.fa-arrow-right-from-bracket, .logout{
-    color: rgb(176, 0, 0);
+.fa-arrow-right-from-bracket,
+.logout {
+  color: rgb(176, 0, 0);
 }
 
 .user-data {
-    font-size: 1rem;
+  font-size: 1rem;
 }
 
-.userEmail{
-    font-size: 0.8rem;
-    color: grey;
+.userEmail {
+  font-size: 0.8rem;
+  color: grey;
 }
 
-.user-section{
-  border-left: 1px solid #dcdcdc;   /* vertical line */
-  padding-left: 20px;               /* space after line */
-  margin-left: 20px;                /* space before line */
-  height: 40px;                     /* adjust */
+.user-section {
+  border-left: 1px solid #dcdcdc;
+  /* vertical line */
+  padding-left: 20px;
+  /* space after line */
+  margin-left: 20px;
+  /* space before line */
+  height: 40px;
+  /* adjust */
   align-items: center;
 }
 
@@ -98,7 +104,7 @@ nav{
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -123,8 +129,8 @@ nav{
   border-radius: 2rem;
 }
 
-.yes-btn:hover{
-    opacity: 0.5;
+.yes-btn:hover {
+  opacity: 0.5;
 }
 
 .no-btn {
@@ -134,6 +140,6 @@ nav{
   border-radius: 2rem;
 }
 
-.no-btn:hover{
-    opacity: 0.5;
+.no-btn:hover {
+  opacity: 0.5;
 }
