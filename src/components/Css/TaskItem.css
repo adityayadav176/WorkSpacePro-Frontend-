@@ -23,15 +23,15 @@
 
 
 .task-tick-btn {
-     background-color: rgb(209, 213, 255);
+    background-color: rgb(209, 213, 255);
     padding: 0.7rem;
     color: rgb(27, 27, 239);
     border-radius: 1rem;
     margin-right: 10px;
 }
 
-.task-tick-btn:hover{
-     background-color: rgb(122, 135, 250);
+.task-tick-btn:hover {
+    background-color: rgb(122, 135, 250);
 }
 
 .task-trash-btn {
@@ -41,8 +41,8 @@
     border-radius: 1rem;
 }
 
-.task-trash-btn:hover{
-     background-color: rgb(247, 181, 181);
+.task-trash-btn:hover {
+    background-color: rgb(247, 181, 181);
 }
 
 .Task-description {
@@ -57,25 +57,28 @@
     font-weight: 200;
 }
 
-.Priority{
+.Priority {
     border-radius: 2rem;
     padding: 0.4rem 1.1rem;
     font-weight: 500;
 }
 
-.Low{
-    background-color: rgb(211, 255, 211);
-    color: green;
+.Low {
+    background-color: #dcfce7;
+    color: #16a34a;
+    border: 1px solid #16a34a;
 }
 
-.Medium{
-    background-color: rgb(255, 250, 186);
-    color: rgb(148, 148, 0);
+.Medium {
+    background-color: #fef9c3;
+    color: #ca8a04;
+    border: 1px solid #facc15;
 }
 
-.High{
-    background-color: rgb(255, 201, 201);
-    color: red;
+.High {
+    background-color: #fee2e2;
+    color: #dc2626;
+    border: 1px solid #dc2626;
 }
 
 .process {

@@ -49,27 +49,27 @@
 
 /* Tag Colors */
 .work {
-   background-color: rgb(200, 200, 255);
-   color: blue;
+     background-color: #dbeafe;
+  color: #2563eb;
 }
 .general {
-   background-color:  rgb(198, 198, 198);
-   color: grey;
+      background-color: #ccfbf1;
+  color: #0d9488;
 }
 
 .personal {
-   background-color:  rgb(235, 213, 255);
-   color: purple;
+   background-color: #f3e8ff;
+  color: #9333ea;
 }
 
 .ideas {
-   background-color: rgb(216, 255, 216);
-   color: green;
+   background-color: #dcfce7;
+  color: #16a34a;
 }
 
 .important {
-     background-color: rgb(255, 217, 217);
-     color: red;
+     background-color: #fee2e2;
+  color: #dc2626;
 }
 
 .fa-pen-to-square {
