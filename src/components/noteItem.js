@@ -1,6 +1,7 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import "./Css/noteItem.css";
 import noteContext from "../context/notes/noteContext"
+import { toast } from "react-toastify";
 
 function NoteItem(props) {
     const context = useContext(noteContext);
@@ -19,8 +20,16 @@ function NoteItem(props) {
                         {new Date(note.date).toLocaleDateString()}
                     </div>
                     <div className="Note-btn">
-                        <i className="fa-regular fa-pen-to-square" onClick={() => {setUpdateNote(true); setCurrentNote(note);}}></i>
-                        <i className="fa-regular fa-trash-can note-trash-btn" onClick={()=>{deleteNote(note._id)}}></i>
+                        <i className="fa-regular fa-pen-to-square" onClick={() => { setUpdateNote(true); setCurrentNote(note); }}></i>
+                        <i className="fa-regular fa-trash-can note-trash-btn" onClick={() => {
+                            const success = deleteNote(note._id)
+                            if (success) {
+                                toast.success("Note deleted Successfully");
+                            } else {
+                                toast.error("Failed to delete note!");
+                            }
+
+                        }}></i>
                     </div>
                 </div>
             </div>

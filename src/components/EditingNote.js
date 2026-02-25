@@ -1,6 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react';
 import "./Css/noteEditing.css";
 import noteContext from '../context/notes/noteContext';
+import { toast } from "react-toastify";
 
 function EditingNote() {
 
@@ -36,12 +37,18 @@ function EditingNote() {
   const handleUpdate = () => {
     if (!currentNote) return;
 
-    editNote(
+    const success = editNote(
       currentNote._id,
       note.etitle,
       note.edescription,
       note.etag
     );
+
+    if (success) {
+      toast.success("Changes saved");
+    } else {
+      toast.error("Failed to add task");
+    }
 
     setUpdateNote(false);
   };

@@ -3,6 +3,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import img from "../assest/image.png";
 import "./Css/Login.css";
 import bg from "../assest/Fimage3.jpg"
+import { toast } from "react-toastify";
 
 function Login() {
   const [credentials, setCredentials] = useState({
@@ -27,20 +28,20 @@ function Login() {
       });
 
       const json = await response.json();
-     
+
 
       if (response.ok) {
-      localStorage.setItem("token", json.authtoken);
-        alert("Login Successful");
+        localStorage.setItem("token", json.authtoken);
+        toast.success("Login Successful");
         navigate("/Dashboard");
       }
-    else {
-        alert("Invalid Credentials");
+      else {
+        toast.error("Invalid Credentials");
       }
-       
+
     } catch (error) {
       console.error("Error:", error);
-      alert("Server not running or CORS issue");
+      toast.error("Server not running or CORS issue")
     }
   };
 
@@ -50,7 +51,7 @@ function Login() {
 
   return (
     <div className="Login-page" style={{ backgroundImage: `url(${bg})` }}>
-        <div className="Login-Signup-Container">
+      <div className="Login-Signup-Container">
         <div className="Login-left">
           <img src={img} alt="login" />
         </div>
@@ -74,16 +75,16 @@ function Login() {
             />
             ) : (
 
-            <input
-              type="Number"
-              name="mobileNo"
-              maxLength={10}
-              autoComplete="off"
-              value={credentials.mobileNo}
-              onChange={onChange}
-              placeholder="Enter Your mobileNo"
-              required
-            /> )}
+              <input
+                type="Number"
+                name="mobileNo"
+                maxLength={10}
+                autoComplete="off"
+                value={credentials.mobileNo}
+                onChange={onChange}
+                placeholder="Enter Your mobileNo"
+                required
+              />)}
 
             <input
               type="password"

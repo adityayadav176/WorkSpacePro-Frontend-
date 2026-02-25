@@ -1,43 +1,51 @@
-import React, {useContext} from 'react'
+import React, { useContext } from 'react'
 import './Css/TaskItem.css'
 import taskContext from '../context/tasks/taskContext';
+import { toast } from "react-toastify";
 
 function TaskItem(props) {
-  const {task} = props;
-   const context = useContext(taskContext);
-  const {deleteTask} = context;
+  const { task } = props;
+  const context = useContext(taskContext);
+  const { deleteTask } = context;
   return (
     <>
-   
+
       <div className="Task-container">
         <div className="task-data">
-        <div className="task-title">
+          <div className="task-title">
             <h2>{task.title}</h2>
             <p className={`Priority ${task.priority}`}>{task.priority}</p>
-        </div>
-        <div className="task-btn">
+          </div>
+          <div className="task-btn">
             <i className=
-"fa-solid fa-check task-tick-btn"></i>
+              "fa-solid fa-check task-tick-btn"></i>
             <i className=
-"fa-regular fa-trash-can task-trash-btn" onClick={()=>{deleteTask(task._id)}}></i>
-            </div>
+              "fa-regular fa-trash-can task-trash-btn" onClick={() => {
+                const success = deleteTask(task._id)
+                if (success) {
+                  toast.success("Task deleted Successfully");
+                } else {
+                  toast.error("Failed to delete note!");
+                }
+              }}></i>
+          </div>
         </div>
         <div className="Task-description">
-            <p>{task.description}</p>
+          <p>{task.description}</p>
         </div>
         <div className="task-process-date">
-           <div className="process">
+          <div className="process">
             <i className=
-"fa-solid fa-check"></i>
+              "fa-solid fa-check"></i>
             {task.status}
-           </div>
-           <div className="task-date">
+          </div>
+          <div className="task-date">
             <i className=
-"fa-regular fa-clock"></i>
-            {new Date (task.date).toLocaleDateString()}
-           </div>
+              "fa-regular fa-clock"></i>
+            {new Date(task.date).toLocaleDateString()}
+          </div>
         </div>
-      </div> 
+      </div>
     </>
   )
 }

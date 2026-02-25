@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react'
 import "./Css/Addnote.css"
 import noteContext from "../context/notes/noteContext"
+import { toast } from "react-toastify";
 
 function AddNote(props) {
     const context = useContext(noteContext);
@@ -12,8 +13,13 @@ function AddNote(props) {
             alert("Fill title and description");
             return;
         }
-        addNote(note.title, note.description, note.tag);
+        const success = addNote(note.title, note.description, note.tag);
         props.closeForm();
+        if (success) {
+            toast.success("Note Added Successfully!");
+        } else {
+            toast.error("Failed to add task");
+        }
     }
 
     const onchange = (e) => {

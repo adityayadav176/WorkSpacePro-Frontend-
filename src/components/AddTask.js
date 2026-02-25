@@ -1,6 +1,8 @@
 import React, { useState, useContext } from 'react'
 import "./Css/AddTask.css"
 import taskContext from '../context/tasks/taskContext';
+import { toast } from "react-toastify";
+
 
 function AddTask(props) {
     const { closeForm } = props;
@@ -13,11 +15,16 @@ function AddTask(props) {
             alert("Fill title and description");
             return;
         }
-        addTask(task.title, task.description, task.status, task.priority)
+        const success = addTask(task.title, task.description, task.status, task.priority)
+        if (success) {
+            toast.success("Task Added Successfully!");
+        } else {
+            toast.error("Failed to add task");
+        }
         closeForm()
     }
     const onChange = (e) => {
-        setTask({ ...task, [e.target.name]: e.target.value })
+        setTask({ ...task, [e.target.name]: e.target.value });
     }
     return (
         <>
