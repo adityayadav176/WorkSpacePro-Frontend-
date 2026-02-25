@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import "./Css/NavBar.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 function NavBar() {
   const [user, setUser] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const getUser = async () => {
@@ -27,7 +28,9 @@ function NavBar() {
   const handleLogout = () => {
     localStorage.removeItem('token')
     toast.success("Logged out");
+     navigate('/')
   }
+  const [showConfirm, setShowConfirm] = useState(false)
   return (
     <>
 
@@ -49,11 +52,30 @@ function NavBar() {
               <p className='userEmail'>{user.email}</p>
             </div>
             )}
-            <li><NavLink to="/" onClick={handleLogout}><i className=
-              "fa-solid fa-arrow-right-from-bracket"></i><span className='logout'>Logout</span></NavLink></li>
+            <li onClick={() => {setShowConfirm(true)}} className='LogoutBtn'> <i className=
+              "fa-solid fa-arrow-right-from-bracket"></i><span className='logout'>Logout</span></li>
           </ul>
         </div>
       </nav>
+      {showConfirm && (
+        <div className="confirm-overlay">
+          <div className="confirm-box">
+
+            <p>Are you sure you want to logout?</p>
+
+            <div className="confirm-buttons">
+              <button onClick={handleLogout} className="yes-btn">
+                Yes
+              </button>
+
+              <button onClick={() => setShowConfirm(false)} className="no-btn">
+                No
+              </button>
+            </div>
+
+          </div>
+        </div>
+      )}
     </>
   )
 }

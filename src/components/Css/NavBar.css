@@ -40,6 +40,18 @@ nav{
     align-items: center;
 }
 
+.LogoutBtn{
+   text-decoration: none;
+  color: black;
+  padding: 8px 12px;
+  border-radius: 10px;
+}
+
+.LogoutBtn:hover:not(.active) {
+  background-color: #ececec;
+}
+
+
 .right ul li a {
   text-decoration: none;
   color: black;
@@ -57,6 +69,7 @@ nav{
   background-color: #2563eb;  /* blue */
   color: white;
 }
+
 
 .fa-arrow-right-from-bracket, .logout{
     color: rgb(176, 0, 0);
@@ -77,4 +90,50 @@ nav{
   margin-left: 20px;                /* space before line */
   height: 40px;                     /* adjust */
   align-items: center;
+}
+
+.confirm-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.confirm-box {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.confirm-buttons {
+  margin-top: 15px;
+}
+
+.yes-btn {
+  background: red;
+  color: white;
+  margin-right: 10px;
+  padding: 0.5rem 2rem;
+  border-radius: 2rem;
+}
+
+.yes-btn:hover{
+    opacity: 0.5;
+}
+
+.no-btn {
+  background: gray;
+  color: white;
+  padding: 0.5rem 2rem;
+  border-radius: 2rem;
+}
+
+.no-btn:hover{
+    opacity: 0.5;
 }

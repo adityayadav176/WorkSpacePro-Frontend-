@@ -30,6 +30,7 @@ function App() {
               closeOnClick
               pauseOnHover
               draggable
+                // theme= "colored"
             />
             <Routes>
               <Route path="/Dashboard" element={<Home />} />
