@@ -28,6 +28,7 @@ function NavBar() {
       navigate('/')
       toast.error("Plz login to explore WorkSpace Pro")
     }
+    // eslint-disable-next-line
   }, []);
   const handleLogout = () => {
     localStorage.removeItem('token')

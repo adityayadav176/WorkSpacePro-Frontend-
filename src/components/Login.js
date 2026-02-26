@@ -1,12 +1,9 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import './Css/Login.css'
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
-import progressContext from '../context/Progress/progressContext';
 
 function Login() {
-    const ProgressContext = useContext(progressContext)
-    const { setProgress } = ProgressContext;
     const host = "http://localhost:8000";
     const navigate = useNavigate();
     const [credentials, setCredentials] = useState({ email: "", password: "", mobileNo: "" })
@@ -29,15 +26,14 @@ function Login() {
                 body: JSON.stringify(credentials),
             })
             const json = await response.json()
-            console.log(json);
             if (response.ok) {
+                toast.success("Login Successfull")
                 localStorage.setItem("token", json.authtoken);
                 navigate('/dashboard')
             } else {
                 toast.error("Invalid Credentials");
             }
         } catch (error) {
-            console.error("Error:", error);
             toast.error("Server not running or CORS issue")
         }
     }
@@ -65,7 +61,7 @@ function Login() {
                 </div>
                 <div className="LoginRight">
                     <div className="AuthenticationBtn">
-                        <button className='LoginBtn' onClick={() => {setProgress(); navigate("/signup") }}>Signup</button>
+                        <button className='LoginBtn' onClick={() => {navigate("/signup") }}>Signup</button>
                     </div>
                     <div className="LoginForm">
                         <form>

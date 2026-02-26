@@ -7,7 +7,6 @@ import Task from './components/Task'
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
   useLocation
@@ -28,12 +27,13 @@ function App() {
   useEffect(() => {
     setProgress(0);
     setProgress(30);
-
+    
     const timer = setTimeout(() => {
       setProgress(100);
     }, 600);
 
     return () => clearTimeout(timer);
+    // eslint-disable-next-line
   }, [location]);
 
   return (

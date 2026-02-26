@@ -1,32 +1,36 @@
-import React, { useState, useContext } from 'react'
+import React, { useState } from 'react'
 import './Css/Login.css'
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import './Css/Signup.css'
-import progressContext from '../context/Progress/progressContext';
 
 function Signup() {
-  const ProgressContext = useContext(progressContext)
-  const { setProgress } = ProgressContext;
   const navigate = useNavigate();
   const host = "http://localhost:8000";
   const [credentials, setCredentials] = useState({ email: "", password: "", mobileNo: "", name: "" })
   const handleClick = async (e) => {
     e.preventDefault();
-    const response = await fetch(`${host}/api/auth/Signup`, {
-      method: "POST",
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(credentials)
-    })
-    const json = response.json()
-    if (response.ok) {
-      navigate('/')
+    try {
+      const response = await fetch(`${host}/api/auth/Signup`, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(credentials)
+      })
+      const json = response.json()
+      if (response.ok) {
+        toast.success("Signup Successfull")
+        navigate('/')
+      } else {
+        toast.error("Invalid Credentials");
+      }
+    } catch (error) {
+      toast.error("Server not running or CORS issue")
     }
   }
   const onChange = (e) => {
-    setCredentials({...credentials, [e.target.name]: e.target.value});
+    setCredentials({ ...credentials, [e.target.name]: e.target.value });
   }
   return (
     <>
@@ -51,7 +55,7 @@ function Signup() {
         </div>
         <div className="SignupRight">
           <div className="AuthenticationBtn">
-            <button className='SignupBtn' onClick={() => { setProgress(); navigate("/") }}>Login</button>
+            <button className='SignupBtn' onClick={() => { navigate("/") }}>Login</button>
           </div>
           <div className="SignupForm">
             <form>
