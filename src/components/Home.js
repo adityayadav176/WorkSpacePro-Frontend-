@@ -14,9 +14,7 @@ function Home() {
     const fetchData = async () => {
       await getNotes();
       await getTask();
-      // eslint-disable-next-line 
     };
-    // eslint-disable-next-line 
     fetchData();
   }, [getNotes, getTask]);
   const Today = new Date().toDateString();
